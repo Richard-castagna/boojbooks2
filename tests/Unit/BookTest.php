@@ -2,8 +2,8 @@
 
 namespace Tests\Unit;
 
-use Tests\TestCase;
 use App\Book;
+use Tests\TestCase;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class BookTest extends TestCase
@@ -19,13 +19,13 @@ class BookTest extends TestCase
 
         $book = factory(Book::class)->create([
             'title' => 'New Book',
-            'publication_date' => date('Y-m-d H:i:s'),
+            'publication_date' => date('Y-m-d'),
             'description' => 'This is the first book that has been written by this author.',
             'pages' => '300',
             'author_id' => '1'
         ]);
 
-        $this->assertDatabaseHas('authors', [
+        $this->assertDatabaseHas('books', [
             'title' => 'New Book',
             'publication_date' => date('Y-m-d'),
             'pages' => '300'
@@ -40,7 +40,7 @@ class BookTest extends TestCase
     public function testMissingAuthor()
     {
 
-        $this->assertDatabaseMissing('authors', [
+        $this->assertDatabaseMissing('books', [
             'title' => 'Oldest Book',
         ]);
 

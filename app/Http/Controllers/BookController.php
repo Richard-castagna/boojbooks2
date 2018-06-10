@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Book;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use App\Book;
+
+/* Made controller with just book related functions.  An update function would need to be added also.  As of right now they can only create, read and delete. There would also need to be a way on the site to update the information.  The view does not contain a way to do this either, so that would need to be added. */
 
 class BookController extends Controller
 {
@@ -13,6 +15,7 @@ class BookController extends Controller
      *
      * @return void
      */
+
     public function __construct()
     {
         $this->middleware('auth');
@@ -24,6 +27,7 @@ class BookController extends Controller
 
         return view('books', compact('books'));
     }
+
     public function addBook()
     {
         $book = new Book;
@@ -37,6 +41,7 @@ class BookController extends Controller
         session()->flash('status', 'Book Added!');
         return redirect('books');
     }
+
     public function deleteBook($book_id)
     {
         DB::table('books')->where('id', $book_id)->delete();

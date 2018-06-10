@@ -7,6 +7,8 @@ use Illuminate\Support\Facades\DB;
 use App\Author;
 use App\Book;
 
+/* Made controller with just home related functions.  Removed author and book functions and moved to their own controllers */
+
 class HomeController extends Controller
 {
     /**
@@ -29,3 +31,5 @@ class HomeController extends Controller
         return view('home');
     }
 }
+
+

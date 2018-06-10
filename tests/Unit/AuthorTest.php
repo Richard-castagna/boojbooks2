@@ -2,8 +2,8 @@
 
 namespace Tests\Unit;
 
-use Tests\TestCase;
 use App\Author;
+use Tests\TestCase;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class AuthorTest extends TestCase
@@ -30,6 +30,7 @@ class AuthorTest extends TestCase
         ]);
 
     }
+
     /**
      * A missing author test.
      *

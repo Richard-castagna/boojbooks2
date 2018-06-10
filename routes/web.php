@@ -15,6 +15,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+/* updated the routes to go to specific page controllers */
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
@@ -26,3 +28,4 @@ Route::get('/authors/delete/{id}', 'AuthorController@deleteAuthor');
 Route::get('/books', 'BookController@books')->name('books');
 Route::post('/books', 'BookController@addBook');
 Route::get('/books/delete/{id}', 'BookController@deleteBook');
+

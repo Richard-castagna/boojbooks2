@@ -8,10 +8,11 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 class HomepageTest extends TestCase
 {
     /**
-     * A basic test example.
+     * Test that the homepage is accessible.
      *
      * @return void
      */
+
     public function testHomepageTest()
     {
         $response = $this->get('/');
